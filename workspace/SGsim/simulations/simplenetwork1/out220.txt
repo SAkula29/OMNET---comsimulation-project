@@ -1,0 +1,182 @@
+jobNumber = 4725378	password = HWJCXtoD
+Job 4725378 dispatched
+password: HWJCXtoD
+---------- Begin Solver Output -----------
+Job submitted to NEOS HTCondor pool.
+Checking for model file.
+Executed on neos-7.neos-server.org
+GAMS 24.5.6  r55090 Released Nov 27, 2015 LEX-LEG x86 64bit/Linux 06/21/16 03:03:29 Page 1
+Test Problem
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  24.5.6 r55090 LEX-LEG
+GAMS 24.5.6  r55090 Released Nov 27, 2015 LEX-LEG x86 64bit/Linux 06/21/16 03:03:29 Page 2
+Test Problem
+Model Statistics    SOLVE TEST Using DNLP From line 180
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          35     SINGLE EQUATIONS          375
+BLOCKS OF VARIABLES          12     SINGLE VARIABLES          332
+NON ZERO ELEMENTS         1,540     NON LINEAR N-Z          1,131
+DERIVATIVE POOL              20     CONSTANT POOL              40
+CODE LENGTH               5,294
+
+
+GENERATION TIME      =        0.003 SECONDS      4 MB  24.5.6 r55090 LEX-LEG
+
+
+EXECUTION TIME       =        0.003 SECONDS      4 MB  24.5.6 r55090 LEX-LEG
+GAMS 24.5.6  r55090 Released Nov 27, 2015 LEX-LEG x86 64bit/Linux 06/21/16 03:03:29 Page 3
+Test Problem
+Solution Report     SOLVE TEST Using DNLP From line 180
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   TEST                OBJECTIVE  Z
+     TYPE    DNLP                DIRECTION  MINIMIZE
+     SOLVER  CONOPT              FROM LINE  180
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE            26172.3722
+
+ RESOURCE USAGE, LIMIT          0.016      1000.000
+ ITERATION COUNT, LIMIT        47    2000000000
+ EVALUATION ERRORS              0             0
+CONOPT 3         24.5.6 r55090 Released Nov 27, 2015 LEG x86 64bit/Linux      
+ 
+ 
+    C O N O P T 3   version 3.17A
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+ ** Warning **  The number of nonlinear derivatives equal to zero
+                in the initial point is large (= 43 percent).
+                A better initial point will probably help the
+                optimization.
+ 
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 7.3 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+ 
+                   Pre-triangular equations:   265
+                   Post-triangular equations:  2
+ 
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+ 
+ CONOPT time Total                            0.017 seconds
+   of which: Function evaluations             0.008 = 47.1%
+             1st Derivative evaluations       0.001 =  5.9%
+             Directional 2nd Derivative       0.000 =  0.0%
+ 
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 24.5.6  r55090 Released Nov 27, 2015 LEX-LEG x86 64bit/Linux 06/21/16 03:03:29 Page 4
+Test Problem
+E x e c u t i o n
+
+
+----    181 VARIABLE x.L  
+
+            2           3           4           5           6           7
+
+1      -0.007      -0.007      -0.007      -0.007      -0.008      -0.008
+
++           8           9          10          11
+
+1      -0.008      -0.008      -0.008      -0.008
+
+
+----    181 VARIABLE P.L  
+
+            1
+
+1   26172.372
+
+
+----    181 VARIABLE V.L  
+
+            1           2           3           4           5           6
+
+1     382.414     371.735     371.385     371.073     370.796     370.562
+
++           7           8           9          10          11
+
+1     370.367     370.216     370.110     370.037     370.000
+
+
+----    181 VARIABLE Q.L  
+
+            1
+
+1      21.416
+
+
+----    181 VARIABLE Losses.L              =     -781.747  
+
+----    181 VARIABLE Ppv.L  
+
+                      ( ALL       0.000 )
+
+
+----    181 VARIABLE Qpv.L  
+
+            2           4           6           9
+
+1     540.174    1230.140    1395.588    2150.000
+
+
+----    181 VARIABLE PLv.L  
+
+            2           3           4           5           6           7
+
+1    2330.126    2016.225    2197.389    2310.207    2464.436    2418.668
+
++           8           9          10          11
+
+1    2474.967    2447.738    2002.437    1997.542
+
+
+----    181 VARIABLE QLv.L  
+
+            2           3           4           5           6           7
+
+1     684.183     675.554     760.494     677.752     414.771     627.756
+
++           8           9          10          11
+
+1     433.023     120.955      88.835     671.078
+
+
+----    181 VARIABLE Z.L                   =    26172.372  
+
+
+EXECUTION TIME       =        0.001 SECONDS      3 MB  24.5.6 r55090 LEX-LEG
+
+
+USER: Computer Sciences Dept.                        G151218:1517AO-LNX
+      University of Wisconsin-Madison                            DC8499
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /var/lib/condor/execute/dir_3541389/MODEL.gms
+Output     /var/lib/condor/execute/dir_3541389/solve.out

@@ -1,0 +1,5 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "Smartgridnet.PMU1" "SmartHost" "2" "565x342+78+78:zoomed"
+inspector "Smartgridnet.internet" "InternetCloud" "2" "1536x811+52+52:zoomed"
+inspector "Smartgridnet" "Smartgridnet" "2" "1531x806+-6+-6:zoomed"
+

@@ -1,0 +1,62 @@
+<document>
+<category>nco</category>
+<solver>CONOPT</solver>
+<inputType>GAMS</inputType>
+<client>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0@131.188.37.245</client>
+<priority>short</priority>
+<email></email>
+<model><![CDATA[$TITLE Test Problem 
+$OFFSYMxREF 
+$OFFSYMLIST 
+  option nlp=conopt;
+  option mip=cplex;
+  option rminlp=conopt;
+  option minlp=dicopt;
+sets
+i /1*11/
+t /1*1/;
+Alias (i,k);
+variables x(t,k),V(t,k), P(t,i), Z,Q(t,i),PLv(t,i),QLv(t,i), Losses,Ppv(t,i),Qpv(t,i), G(i,k),B(i,k);
+
+
+*Table B(i,k) quality indices
+*	1	2	3	4	5
+*1	-50	20	30
+*2 	20	-52	32
+*3	30	32	-62
+
+Table B0(i,k) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+1	-0.0277	0.0277	0	0	0	0	0	0	0	0	0
+2	0.0277	-0.7217	0.694	0	0	0	0	0	0	0	0
+3	0	0.694	-1.388	0.694	0	0	0	0	0	0	0
+4	0	0	0.694	-1.388	0.694	0	0	0	0	0	0
+5	0	0	0	0.694	-1.388	0.694	0	0	0	0	0
+6	0	0	0	0	0.694	-1.388	0.694	0	0	0	0
+7	0	0	0	0	0	0.694	-1.388	0.694	0	0	0
+8	0	0	0	0	0	0	0.694	-1.388	0.694	0	0
+9	0	0	0	0	0	0	0	0.694	-1.388	0.694	0
+10	0	0	0	0	0	0	0	0	0.694	-1.388	0.694
+11	0	0	0	0	0	0	0	0	0	0.694	-0.694
+
+
+
+*Table G0(i,k) quality indices
+*	1	2	3	
+*1	20	-10	-10	
+*2 	-10	26	-16
+*3	-10	-16	26	
+Table G0(i,k) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+1	0.11849	-0.1184	0	0	0	0	0	0	0	0	0
+2	-0.1184	3.0807	-2.962	0	0	0	0	0	0	0	0
+3	0	-2.962	5.924	-2.962	0	0	0	0	0	0	0
+4	0	0	-2.962	5.924	-2.962	0	0	0	0	0	0
+5	0	0	0	-2.962	5.924	-2.962	0	0	0	0	0
+6	0	0	0	0	-2.962	5.924	-2.962	0	0	0	0
+7	0	0	0	0	0	-2.962	5.924	-2.962	0	0	0
+8	0	0	0	0	0	0	-2.962	5.924	-2.962	0	0
+9	0	0	0	0	0	0	0	-2.962	5.924	-2.962	0
+10	0	0	0	0	0	0	0	0	-2.962	5.924	-2.962
+11	0	0	0	0	0	0	0	0	0	-2.962	2.962
+

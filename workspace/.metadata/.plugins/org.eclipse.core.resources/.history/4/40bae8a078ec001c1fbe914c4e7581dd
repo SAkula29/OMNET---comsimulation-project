@@ -1,0 +1,143 @@
+[General]
+sim-time-limit = 24h
+#scheduler-class = cRealTimeScheduler
+network =Smartgridnet
+
+**.vector-recording = false
+**.solver.File="C:\\Users\\getto\\Downloads\\sgsimv2\\sgsimv2\\workspace\\SGsim\\simulations\\simplenetwork1\\example_5nodes.dss"
+**.solver.Interval=0.04s
+
+**.displayAddresses=false
+**.internet.networkLayer.delayer.config = xmldoc("internetCloud.xml")
+**.DERapp.NrPoints = 1440
+**.DERapp.DataPeriod =60
+**.name="PMU"
+**.PMUdestAddress="PDC"
+**.PMUapp.Interval = 0.04
+Smartgridnet.PMU1.PMUapp.Element = "line.Line01"
+Smartgridnet.PMU1.PMUapp.id=1
+**.PMUapp.localPort = 100
+**.PMUapp.destPort = 100
+**.PDC.**.localPort = 100
+**.PDC.**.destPort = 100
+**.PDC.**.Port = 4712
+
+**.controller.OptimalVARFN ="QPV_opt96.txt" 
+**.controller.VoltageFN="ltc_voltage96.txt"
+**.controller.localPort = 100
+**.controller.destPort = 100
+**.controller.VProt = true
+**.controller.LTC = "regcontrol.TR1"
+**.controller.Element="line.Line01"
+**.controller.Interval=1s
+**.controller.destAddresses="PV1"
+**.controller.TCPlocalport=1000
+**.controller.TCPdestport=1000
+
+**.SmarthouseApp.NrPoints = 1440
+**.SmarthouseApp.DataPeriod = 60
+**.SmarthouseApp.Interval = 60s
+
+Smartgridnet.LD1.SmarthouseApp.Demandkw="data114kw.txt"
+Smartgridnet.LD1.SmarthouseApp.Demandkvar="data101var.txt"
+Smartgridnet.LD2.SmarthouseApp.Demandkw="data101kw.txt"
+Smartgridnet.LD2.SmarthouseApp.Demandkvar="data101var.txt"
+Smartgridnet.LD3.SmarthouseApp.Demandkw="data93kw.txt"
+Smartgridnet.LD3.SmarthouseApp.Demandkvar="data101var.txt"
+Smartgridnet.LD4.SmarthouseApp.Demandkw="data77kw.txt"
+Smartgridnet.LD4.SmarthouseApp.Demandkvar="data101var.txt"
+Smartgridnet.LD5.SmarthouseApp.Demandkw="data59kw.txt"
+Smartgridnet.LD5.SmarthouseApp.Demandkvar="data101var.txt"
+
+
+
+**.SmarthouseApp.destPort=100
+**.SmarthouseApp.destAddresses="CVRController"
+
+**.DERapp.localPort = 100
+**.DERapp.destPort = 100
+**.DERapp.destAddresses="CVRController"
+**.DERapp.Interval=1s
+**.DERapp.Irrad="PVirrad93pu.txt"
+**.DERapp.KVA = 10
+
+**.BATapp.localPort = 100
+**.BATapp.destPort = 100
+**.BATapp.destAddresses="CVRController"
+**.BATapp.Interval=1s
+**.BATapp.startdischarge = 61000s
+**.BATapp.stopdischarge = 61000s
+
+
+
+
+#.pcap file code
+record-eventlog = true
+total-stack = 15MiB
+tkenv-plugin-path = C:\\Users\\getto\\Downloads\\sgsimv\\sgsimv2\\workspace\\inet\\etc\\plugins
+
+# traffic settings
+#*.internet.numApps = 1
+#*.internet.app[0].typename = "internet"
+#*.internet.app[*].destAddresses = "PMU1"
+#*.internet.app[*].destPort = 1000
+#*.internet.app[*].localPort = 1000
+#*.internet.app[*].messageLength = 10000Byte
+#*.internet.app[*].sendInterval = 2ms
+
+#*.PMU1.numApps = 1
+#*.PMU1.app[0].typename = "PMU1"
+#*.PMU1.app[*].localPort = 1000
+
+#saving results
+#**.numPcapRecorders = 1
+#**.PMU1.pcapRecorder[0].pcapFile = "results/PMU1.pcap"
+
+
+## tcp apps
+**.numUdpApps = 1
+**.internet*.udpApp[*].typename = "internet"
+**.internet*.tcpApp[0].active = true
+#**.internet*.tcpApp[0].localAddress = "10.0.0.1"
+#**.internet*.tcpApp[0].localAddress = "192.168.1.1"
+**.internet*.tcpApp[0].localPort = -1
+**.internet*.tcpApp[0].connectAddress = "server"
+**.internet*.tcpApp[0].connectPort = 1000
+**.internet*.tcpApp[0].tOpen = 0.2s
+**.internet*.tcpApp[0].tSend = 0.4s
+**.internet*.tcpApp[0].sendBytes = 400000B
+**.internet*.tcpApp[0].sendScript = ""
+**.internet*.tcpApp[0].tClose = 100s
+
+# tcp apps
+#**.numTcpApps = 1
+#**.client*.tcpApp[*].type-name = "TCPBasicClientApp"
+#**.client*.tcpApp[0].active = true
+##**.client*.tcpApp[0].localAddress = "10.0.0.1"
+##**.client*.tcpApp[0].localAddress = "192.168.1.1"
+#**.client*.tcpApp[0].localPort = -1
+#**.client*.tcpApp[0].connectAddress = "server"
+#**.client*.tcpApp[0].connectPort = 1000
+#**.client*.tcpApp[0].tOpen = 0.2s
+#**.client*.tcpApp[0].tSend = 0.4s
+#**.client*.tcpApp[0].sendBytes = 1000000B
+#**.client*.tcpApp[0].idleInterval = 3s
+#**.client*.tcpApp[0].thinkTime = 0s
+
+
+#**.server*.tcpApp[*].type-name="TCPSinkApp"
+**.server*.tcpApp[*].typename = "TCPEchoApp"
+#**.server*.tcpApp[0].localAddress = "10.0.0.2"
+#**.server*.tcpApp[0].localAddress = "192.168.1.2"
+**.server*.tcpApp[0].localPort = 1000
+**.server*.tcpApp[0].echoFactor = 2.0
+**.server*.tcpApp[0].echoDelay = 0
+
+# NIC configuration
+**.ppp[*].queueType = "DropTailQueue" # in routers
+**.ppp[*].queue.frameCapacity = 10  # in routers
+
+**.numPcapRecorders = 1
+**.server.pcapRecorder[0].pcapFile = "results/server.pcap"
+**.client0.pcapRecorder[0].pcapFile = "results/client0.pcap"
+**.client1.pcapRecorder[0].pcapFile = "results/client1.pcap"

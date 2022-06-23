@@ -1,0 +1,38 @@
+clear
+
+// VSOURCE
+
+new circuit.example1 basekV=11 pu=1.00 angle=0 frequency=50 phases=3
+set defaultBasefrequency=50
+
+// TRANSFORMERS
+
+new transformer.TR1 phases=3 windings=2 buses=(sourcebus, B0) conns=(wye, wye) kvs=(11, 0.4) kvas=(250, 250) taps=(1,1)
+//TRANSFORMER CONTROLLER
+new regcontrol.TR1 transformer=TR1 winding=2  vreg=(242) ptratio=(1) band=1
+
+// LINECODE AND LINES
+new Linecode.LCode nphases=3 R1=0.320 X1=0.075 C1=0 units=km
+
+new line.Line01 bus1=B0 bus2=B1 Linecode=LCode length=0.5 units=km
+
+// LOADS
+new load.LD1 bus1=B1 kV=0.4 kW=5  PF=1  Model=8 ZIPV=[0.85 -1.12 1.27 10.96 -18.73 8.77 0.8] 
+
+// PV
+new PVsystem.PV1 bus1=B1 phases=3 kV=0.4 KVA=50 irrad=0.9 Pmpp=50
+
+
+// BATTERY
+
+New Storage.BAT1 Phases=3 Bus1=B1 kV=0.4 kWRated=10  kWhRated=100 %stored=0  pf=1 
+
+// P.U.
+
+Set voltagebases="11 0.4"
+Calcvoltagebases
+
+solve 
+show powers
+show voltages
+C:\Users\akarim\workspace\SGsim\simulations\example\10Loads4PVs1Bat_ex1.dss

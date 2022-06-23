@@ -1,0 +1,43 @@
+
+            2           4           6           9
+
+1     540.174    1230.140    1395.588    2150.000
+
+
+----    181 VARIABLE PLv.L  
+
+            2           3           4           5           6           7
+
+1    2330.126    2016.225    2197.389    2310.207    2464.436    2418.668
+
++           8           9          10          11
+
+1    2474.967    2447.738    2002.437    1997.542
+
+
+----    181 VARIABLE QLv.L  
+
+            2           3           4           5           6           7
+
+1     684.183     675.554     760.494     677.752     414.771     627.756
+
++           8           9          10          11
+
+1     433.023     120.955      88.835     671.078
+
+
+----    181 VARIABLE Z.L                   =    26172.372  
+
+
+EXECUTION TIME       =        0.001 SECONDS      3 MB  24.5.6 r55090 LEX-LEG
+
+
+USER: Computer Sciences Dept.                        G151218:1517AO-LNX
+      University of Wisconsin-Madison                            DC8499
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /var/lib/condor/execute/dir_3541389/MODEL.gms
+Output     /var/lib/condor/execute/dir_3541389/solve.out

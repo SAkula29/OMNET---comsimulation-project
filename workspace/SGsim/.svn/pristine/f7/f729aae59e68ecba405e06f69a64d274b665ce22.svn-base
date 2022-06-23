@@ -1,0 +1,192 @@
+<document>
+<category>nco</category>
+<solver>CONOPT</solver>
+<inputType>GAMS</inputType>
+<client>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0@131.188.37.245</client>
+<priority>short</priority>
+<email></email>
+<model><![CDATA[$TITLE Test Problem 
+$OFFSYMxREF 
+$OFFSYMLIST 
+  option nlp=conopt;
+  option mip=cplex;
+  option rminlp=conopt;
+  option minlp=dicopt;
+sets
+i /1*11/
+t /1*1/;
+Alias (i,k);
+variables x(t,k),V(t,k), P(t,i), Z,Q(t,i),PLv(t,i),QLv(t,i), Losses,Ppv(t,i),Qpv(t,i), G(i,k),B(i,k);
+
+
+*Table B(i,k) quality indices
+*	1	2	3	4	5
+*1	-50	20	30
+*2 	20	-52	32
+*3	30	32	-62
+
+Table B0(i,k) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+1	-0.0277	0.0277	0	0	0	0	0	0	0	0	0
+2	0.0277	-0.7217	0.694	0	0	0	0	0	0	0	0
+3	0	0.694	-1.388	0.694	0	0	0	0	0	0	0
+4	0	0	0.694	-1.388	0.694	0	0	0	0	0	0
+5	0	0	0	0.694	-1.388	0.694	0	0	0	0	0
+6	0	0	0	0	0.694	-1.388	0.694	0	0	0	0
+7	0	0	0	0	0	0.694	-1.388	0.694	0	0	0
+8	0	0	0	0	0	0	0.694	-1.388	0.694	0	0
+9	0	0	0	0	0	0	0	0.694	-1.388	0.694	0
+10	0	0	0	0	0	0	0	0	0.694	-1.388	0.694
+11	0	0	0	0	0	0	0	0	0	0.694	-0.694
+
+
+
+*Table G0(i,k) quality indices
+*	1	2	3	
+*1	20	-10	-10	
+*2 	-10	26	-16
+*3	-10	-16	26	
+Table G0(i,k) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+1	0.11849	-0.1184	0	0	0	0	0	0	0	0	0
+2	-0.1184	3.0807	-2.962	0	0	0	0	0	0	0	0
+3	0	-2.962	5.924	-2.962	0	0	0	0	0	0	0
+4	0	0	-2.962	5.924	-2.962	0	0	0	0	0	0
+5	0	0	0	-2.962	5.924	-2.962	0	0	0	0	0
+6	0	0	0	0	-2.962	5.924	-2.962	0	0	0	0
+7	0	0	0	0	0	-2.962	5.924	-2.962	0	0	0
+8	0	0	0	0	0	0	-2.962	5.924	-2.962	0	0
+9	0	0	0	0	0	0	0	-2.962	5.924	-2.962	0
+10	0	0	0	0	0	0	0	0	-2.962	5.924	-2.962
+11	0	0	0	0	0	0	0	0	0	-2.962	2.962
+
+Table PL(t,i) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+  1	0	2419	2094	2283	2401	2562	2515	2574	2546	2083	2078
+Table QL(t,i) quality indices
+	1	2	3	4	5	6	7	8	9	10	11
+1	0	825	816	920	821	503	762	526	147	108	816
+Parameters
+PVVA(i) quality indices
+/	1	0
+	2	5000
+	3	0
+	4	5000
+	5	0
+	6	5000
+	7	0
+	8	0
+	9	5000
+	10	0
+	11	0	/
+IR(t) quality indices
+/1	0/;
+
+EQUATIONS CONS6(t),CONS7(t),CONS8(t),CONS9(t),CONS10(t),CONS11(t),CONS12(t),CONS13(t),CONS14(t),CONS15(t),CONS16(t),CONS17(t),CON1(t,i),CON2(t,i),CON21(i,k),CON22(i,k), CON3(t),CON4(t), CON81(t),CON83(t), CON85(t), CON5(t),  CON7,CON8(t),CON82(t),CON84(t),CON61(t,i),CON62(t,i),CON621(t,i),CONPL(t,i),CONQL(t,i),CONV(t,i),CONV1(t,i),CONPV(t,i) , OBJ ; 
+
+CON21(i,k) .. G(i,k)=e=50*G0(i,k);
+CON22(i,k) .. B(i,k)=e=50*B0(i,k);
+CONPL(t,i) .. PLv(t,i)=e=PL(t,i)*(0.85*(V(t,i)/400)**2.0-1.12*(V(t,i)/400)+1.27);
+CONQL(t,i) .. QLv(t,i)=e=QL(t,i)*(10.96*(V(t,i)/400)**2.0-18.73*(V(t,i)/400)+8.77);
+CON1(t,i) .. sum(k,V(t,i)*V(t,k)*(G(i,k)*cos(x(t,i)-x(t,k))+B(i,k)*sin(x(t,i)-x(t,k))))-P(t,i)+PLv(t,i)-Ppv(t,i)=e=0;
+
+CON2(t,i) .. sum(k,V(t,i)*V(t,k)*(G(i,k)*sin(x(t,i)-x(t,k))-B(i,k)*cos(x(t,i)-x(t,k))))-Q(t,i)+QLv(t,i)-Qpv(t,i)=e=0;
+
+CON3(t) .. P(t,'2')=e=0;
+CON4(t) .. Q(t,'2')=e=0;
+CON8(t) .. P(t,'3')=e=0.0;
+CON81(t) ..Q(t,'3')=e=0.0;
+CON82(t) .. P(t,'4')=e=0.0;
+CON83(t) ..Q(t,'4')=e=0.0;
+CON84(t) .. P(t,'5')=e=0.0;
+CON85(t) ..Q(t,'5')=e=0.0;
+
+CONS6(t) .. P(t,'6')=e=0;
+CONS7(t) .. Q(t,'6')=e=0;
+CONS8(t) .. P(t,'7')=e=0.0;
+CONS9(t) ..Q(t,'7')=e=0.0;
+CONS10(t) .. P(t,'8')=e=0.0;
+CONS11(t) ..Q(t,'8')=e=0.0;
+CONS12(t) .. P(t,'9')=e=0.0;
+CONS13(t) ..Q(t,'9')=e=0.0;
+CONS14(t) .. P(t,'10')=e=0.0;
+CONS15(t) ..Q(t,'10')=e=0.0;
+CONS16(t) .. P(t,'11')=e=0.0;
+CONS17(t) ..Q(t,'11')=e=0.0;
+
+CON5(t) .. x(t,'1')=e=0;
+*CONSvar(t) .. V(t,'1')=e=433;
+CONV(t,i) .. V(t,i)=g=370;
+CONV1(t,i) .. V(t,i)=l=440;
+CON61(t,i) .. Ppv(t,i)=l=PVVA(i)*IR(t);
+CON62(t,i) .. Qpv(t,i)=l=PVVA(i)*0.43;
+CON621(t,i) .. Qpv(t,i)=g=-PVVA(i)*0.43;
+
+CONPV(t,i) .. (Power(Ppv(t,i),2)+Power(Qpv(t,i),2))=l=Power(PVVA(i),2);
+
+*CON7 .. Losses=e=0.5*(V('1')*V('1')+V('2')*V('2')-2*V('1')*V('2')*cos(x('2')-x('1')));
+*CON7 ..Losses=e=sum((i,k), G(i,k)*(V(t,i)**2+V(t,k)**2- 2*(V(t,i)*cos(x(t,i))+V(t,k)*cos(x(t,k))+V(t,i)*sin(x(t,i))+V(t,k)*sin(x(t,k)))));
+CON7 ..Losses=e=sum((t,i,k), G(i,k)*(V(t,i)**2+V(t,k)**2- 2*V(t,i)*V(t,k)*cos(x(t,k)-x(t,i))))*0.5;
+*OBJ .. Z=e=sqrt(Power(P('1'),2)+Power(Q('1'),2))+abs(Losses);
+*OBJ .. Z=e=sqrt(Power(P('1'),2)+Power(Q('1'),2));
+*OBJ .. Z=e=sqrt(Power(P('1'),2));
+OBJ .. Z=e=sum(t,P(t,'1'));
+*OBJ .. Z=e=abs(Losses);
+*OBJ .. Z=e=sum(t,P(t,'1'))+abs(Losses)-sum((t,i),Ppv(t,i));
+* Upper bounds 
+x.lo(t,k) = -4; 
+x.up(t,k) = 4;
+P.lo(t,i)=-100000;
+P.up(t,i)=200000;
+Q.lo(t,i)=-100000;
+Q.up(t,i)=100000;
+V.lo(t,k) = 100; 
+V.up(t,k) = 600;
+
+Qpv.lo(t,k)=-100000;
+Qpv.up(t,k)=100000;
+Ppv.lo(t,k)=0;
+Ppv.up(t,k)=100000;
+
+* Initial point 
+x.l(t,'1') = 0.000;  
+x.l(t,'2')= -0.100;
+x.l(t,'3')= -0.100;
+x.l(t,'4')= -0.100;
+x.l(t,'5')= -0.100;
+x.l(t,'6') = 0.000;  
+x.l(t,'7')= -0.100;
+x.l(t,'8')= -0.100;
+x.l(t,'9')= -0.100;
+x.l(t,'10')= -0.100;
+x.l(t,'11')= -0.100;
+P.l (t,'1')=20000;  
+V.l(t,'1')=400;
+V.l(t,'2')=370;
+V.l(t,'3')=370;
+V.l(t,'4')=370;
+V.l(t,'5')=370;
+V.l(t,'6')=370;
+V.l(t,'7')=370;
+V.l(t,'8')=370;
+V.l(t,'9')=370;
+V.l(t,'10')=370;
+V.l(t,'11')=370;
+Q.l(t,'1')=20000;
+			 
+			 
+MODEL TEST / ALL / ; 
+ OPTION LIMROW = 0; 
+ OPTION LIMCOL = 0; 
+ OPTION SOLPRINT = OFF;
+ 
+SOLVE TEST USING dnlp MINIMIZING Z;  
+display x.l,P.l,V.l,Q.l,Losses.L,Ppv.l, Qpv.l, PLv.l, QLv.l,Z.l;]]></model>
+
+<options><![CDATA[]]></options>
+
+<gdx><![CDATA[]]></gdx>
+
+<comments><![CDATA[]]></comments>
+
+</document>

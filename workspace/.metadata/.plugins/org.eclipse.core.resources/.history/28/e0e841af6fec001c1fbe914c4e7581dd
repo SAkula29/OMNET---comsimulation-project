@@ -1,0 +1,723 @@
+version 2
+run General-0-20220615-00:51:47-12448
+attr configname General
+attr datetime 20220615-00:51:47
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network PcapRecorderTest
+attr processid 12448
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar PcapRecorderTest.client0.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PcapRecorderTest.client0.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar PcapRecorderTest.client0.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PcapRecorderTest.client0.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PcapRecorderTest.client0.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar PcapRecorderTest.client0.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar PcapRecorderTest.client0.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client0.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.client0.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client0.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.client0.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+statistic PcapRecorderTest.client0.ppp[0].queue 	queueingTime:histogram
+field count 13
+field mean 0.00061558461538462
+field stddev 0.00052142325393445
+field sum 0.0080026
+field sqrsum 8.18886396e-006
+field min 0
+field max 0.001399
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.0006995	0
+bin	-0.00060623333333333	0
+bin	-0.00051296666666667	0
+bin	-0.0004197	0
+bin	-0.00032643333333333	0
+bin	-0.00023316666666667	0
+bin	-0.0001399	0
+bin	-4.6633333333333e-005	4
+bin	4.6633333333333e-005	0
+bin	0.0001399	0
+bin	0.00023316666666667	0
+bin	0.00032643333333333	0
+bin	0.0004197	3
+bin	0.00051296666666667	0
+bin	0.00060623333333333	0
+bin	0.0006995	0
+bin	0.00079276666666667	0
+bin	0.00088603333333333	4
+bin	0.0009793	0
+bin	0.0010725666666667	0
+bin	0.0011658333333333	0
+bin	0.0012591	0
+bin	0.0013523666666667	2
+bin	0.0014456333333333	0
+bin	0.0015389	0
+bin	0.0016321666666667	0
+bin	0.0017254333333333	0
+bin	0.0018187	0
+bin	0.0019119666666667	0
+bin	0.0020052333333333	0
+bin	0.0020985	0
+scalar PcapRecorderTest.client0.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar PcapRecorderTest.client0.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].queue 	queueLength:max 	8
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar PcapRecorderTest.client0.ppp[0].queue 	queueLength:timeavg 	0.034095185106373
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar PcapRecorderTest.client0.ppp[0].queue 	rcvdPk:count 	20
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar PcapRecorderTest.client0.ppp[0].queue 	rcvdPk:sum(packetBytes) 	8844
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	rcvdPkFromHL:count 	13
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	4812
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	passedUpPk:count 	11
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	2052
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	txPk:count 	13
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	txPk:sum(packetBytes) 	4903
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	rxPkOk:count 	11
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	2129
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar PcapRecorderTest.client0.ppp[0].ppp 	txState:timeavg 	0.009213515600402
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar PcapRecorderTest.client0.tcpApp[0] 	bytesRcvd 	1608
+scalar PcapRecorderTest.client0.tcpApp[0] 	bytesSent 	400000
+scalar PcapRecorderTest.client0.tcpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PcapRecorderTest.client0.tcpApp[0] 	sentPk:sum(packetBytes) 	400000
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PcapRecorderTest.client0.tcpApp[0] 	rcvdPk:count 	3
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PcapRecorderTest.client0.tcpApp[0] 	rcvdPk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic PcapRecorderTest.client0.tcpApp[0] 	endToEndDelay:histogram
+field count 3
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-018	3
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PcapRecorderTest.client1.networkLayer.arp 	initiatedARPResolution:count 	1
+attr title  "ARP initiated resolutions, count"
+scalar PcapRecorderTest.client1.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar PcapRecorderTest.client1.networkLayer.arp 	sentReq:count 	1
+attr title  "ARP request sent, count"
+scalar PcapRecorderTest.client1.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PcapRecorderTest.client1.networkLayer.arp 	completedARPResolution:count 	1
+attr title  "ARP completed resolutions, count"
+scalar PcapRecorderTest.client1.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar PcapRecorderTest.client1.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client1.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.client1.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client1.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.client1.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	"simulated time" 	0.4036787
+scalar PcapRecorderTest.client1.eth[0].mac 	full-duplex 	1
+scalar PcapRecorderTest.client1.eth[0].mac 	"frames/sec sent" 	32.203829431674
+scalar PcapRecorderTest.client1.eth[0].mac 	"frames/sec rcvd" 	29.726611783084
+scalar PcapRecorderTest.client1.eth[0].mac 	"bits/sec sent" 	90012.180479178
+scalar PcapRecorderTest.client1.eth[0].mac 	"bits/sec rcvd" 	46730.233723008
+scalar PcapRecorderTest.client1.eth[0].mac 	"rx channel idle (%)" 	99.513672631229
+scalar PcapRecorderTest.client1.eth[0].mac 	"rx channel utilization (%)" 	0.48632736877125
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPkFromHL:count 	21
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	9294
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar PcapRecorderTest.client1.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar PcapRecorderTest.client1.eth[0].mac 	txPk:count 	13
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	txPk:sum(packetBytes) 	4542
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	passedUpPk:count 	12
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	passedUpPk:sum(packetBytes) 	2358
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPkOk:count 	12
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar PcapRecorderTest.client1.eth[0].mac 	rxPkOk:sum(packetBytes) 	2358
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar PcapRecorderTest.client1.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar PcapRecorderTest.client1.eth[0].encap 	decapPk:count 	12
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar PcapRecorderTest.client1.eth[0].encap 	decapPk:sum(packetBytes) 	2080
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar PcapRecorderTest.client1.eth[0].encap 	encapPk:count 	21
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar PcapRecorderTest.client1.eth[0].encap 	encapPk:sum(packetBytes) 	8872
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar PcapRecorderTest.client1.tcpApp[0] 	bytesRcvd 	1608
+scalar PcapRecorderTest.client1.tcpApp[0] 	bytesSent 	400000
+scalar PcapRecorderTest.client1.tcpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PcapRecorderTest.client1.tcpApp[0] 	sentPk:sum(packetBytes) 	400000
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PcapRecorderTest.client1.tcpApp[0] 	rcvdPk:count 	3
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PcapRecorderTest.client1.tcpApp[0] 	rcvdPk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic PcapRecorderTest.client1.tcpApp[0] 	endToEndDelay:histogram
+field count 3
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-018	3
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PcapRecorderTest.server.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PcapRecorderTest.server.networkLayer.arp 	sentReply:count 	1
+attr title  "ARP replies sent, count"
+scalar PcapRecorderTest.server.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PcapRecorderTest.server.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PcapRecorderTest.server.networkLayer.arp 	completedARPResolution:count 	1
+attr title  "ARP completed resolutions, count"
+scalar PcapRecorderTest.server.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar PcapRecorderTest.server.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.server.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.server.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	"simulated time" 	0.4036787
+scalar PcapRecorderTest.server.eth[0].mac 	full-duplex 	1
+scalar PcapRecorderTest.server.eth[0].mac 	"frames/sec sent" 	29.726611783084
+scalar PcapRecorderTest.server.eth[0].mac 	"frames/sec rcvd" 	32.203829431674
+scalar PcapRecorderTest.server.eth[0].mac 	"bits/sec sent" 	46730.233723008
+scalar PcapRecorderTest.server.eth[0].mac 	"bits/sec rcvd" 	90012.180479178
+scalar PcapRecorderTest.server.eth[0].mac 	"rx channel idle (%)" 	99.079267744372
+scalar PcapRecorderTest.server.eth[0].mac 	"rx channel utilization (%)" 	0.92073225562805
+scalar PcapRecorderTest.server.eth[0].mac 	rxPkFromHL:count 	14
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar PcapRecorderTest.server.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	3546
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar PcapRecorderTest.server.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar PcapRecorderTest.server.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar PcapRecorderTest.server.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar PcapRecorderTest.server.eth[0].mac 	txPk:count 	12
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar PcapRecorderTest.server.eth[0].mac 	txPk:sum(packetBytes) 	2358
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	passedUpPk:count 	13
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.server.eth[0].mac 	passedUpPk:sum(packetBytes) 	4542
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar PcapRecorderTest.server.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].mac 	rxPkOk:count 	13
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar PcapRecorderTest.server.eth[0].mac 	rxPkOk:sum(packetBytes) 	4542
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar PcapRecorderTest.server.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar PcapRecorderTest.server.eth[0].encap 	decapPk:count 	13
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar PcapRecorderTest.server.eth[0].encap 	decapPk:sum(packetBytes) 	4264
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar PcapRecorderTest.server.eth[0].encap 	encapPk:count 	14
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar PcapRecorderTest.server.eth[0].encap 	encapPk:sum(packetBytes) 	3232
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+statistic PcapRecorderTest.server.ppp[0].queue 	queueingTime:histogram
+field count 12
+field mean 8.4e-005
+field stddev 0.00017919350637585
+field sum 0.001008
+field sqrsum 4.3788544e-007
+field min 0
+field max 0.0004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.0002332	0
+bin	-0.00020210666666667	0
+bin	-0.00017101333333333	0
+bin	-0.00013992	0
+bin	-0.00010882666666667	0
+bin	-7.7733333333333e-005	0
+bin	-4.664e-005	0
+bin	-1.5546666666667e-005	8
+bin	1.5546666666667e-005	2
+bin	4.664e-005	0
+bin	7.7733333333333e-005	0
+bin	0.00010882666666667	0
+bin	0.00013992	0
+bin	0.00017101333333333	0
+bin	0.00020210666666667	0
+bin	0.0002332	0
+bin	0.00026429333333333	0
+bin	0.00029538666666667	0
+bin	0.00032648	0
+bin	0.00035757333333333	0
+bin	0.00038866666666667	0
+bin	0.00041976	0
+bin	0.00045085333333333	2
+bin	0.00048194666666667	0
+bin	0.00051304	0
+bin	0.00054413333333333	0
+bin	0.00057522666666667	0
+bin	0.00060632	0
+bin	0.00063741333333333	0
+bin	0.00066850666666667	0
+bin	0.0006996	0
+scalar PcapRecorderTest.server.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar PcapRecorderTest.server.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].queue 	queueLength:max 	3
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar PcapRecorderTest.server.ppp[0].queue 	queueLength:timeavg 	0.004546189828693
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar PcapRecorderTest.server.ppp[0].queue 	rcvdPk:count 	15
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar PcapRecorderTest.server.ppp[0].queue 	rcvdPk:sum(packetBytes) 	4356
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	rcvdPkFromHL:count 	12
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	2628
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	passedUpPk:count 	12
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	4236
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	txPk:count 	12
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	txPk:sum(packetBytes) 	2712
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	rxPkOk:count 	12
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar PcapRecorderTest.server.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	4320
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar PcapRecorderTest.server.ppp[0].ppp 	txState:timeavg 	0.004964344167775
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar PcapRecorderTest.server.tcpApp[0] 	bytesRcvd 	7504
+scalar PcapRecorderTest.server.tcpApp[0] 	bytesSent 	15008
+scalar PcapRecorderTest.server.tcpApp[0] 	sentPk:count 	14
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PcapRecorderTest.server.tcpApp[0] 	sentPk:sum(packetBytes) 	15008
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PcapRecorderTest.server.tcpApp[0] 	rcvdPk:count 	14
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PcapRecorderTest.server.tcpApp[0] 	rcvdPk:sum(packetBytes) 	7504
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic PcapRecorderTest.server.tcpApp[0] 	endToEndDelay:histogram
+field count 14
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-018	14
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0

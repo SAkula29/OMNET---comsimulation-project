@@ -1,0 +1,324 @@
+file 34799 1655272483                                           
+version 2
+run General-0-20220615-00:51:47-12448
+attr configname General
+attr datetime 20220615-00:51:47
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network PcapRecorderTest
+attr processid 12448
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 11  PcapRecorderTest.client0.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 12  PcapRecorderTest.client0.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 62  PcapRecorderTest.server.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 63  PcapRecorderTest.server.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 109  PcapRecorderTest.client0.tcp  tcpRcvQueueBytes  ETV
+vector 96  PcapRecorderTest.client0.tcp  "advertised window"  ETV
+vector 95  PcapRecorderTest.client0.tcp  "receive window"  ETV
+vector 98  PcapRecorderTest.client0.tcp  "sent ack"  ETV
+vector 133  PcapRecorderTest.client1.tcp  tcpRcvQueueBytes  ETV
+vector 120  PcapRecorderTest.client1.tcp  "advertised window"  ETV
+vector 119  PcapRecorderTest.client1.tcp  "receive window"  ETV
+vector 122  PcapRecorderTest.client1.tcp  "sent ack"  ETV
+vector 22  PcapRecorderTest.client1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 8  PcapRecorderTest.client0.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 10  PcapRecorderTest.client0.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 17  PcapRecorderTest.client0.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 13  PcapRecorderTest.client0.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 36  PcapRecorderTest.client1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 32  PcapRecorderTest.client1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 65  PcapRecorderTest.server.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 69  PcapRecorderTest.server.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 75  PcapRecorderTest.server.tcp  "rcvd seq"  ETV
+vector 76  PcapRecorderTest.server.tcp  "rcvd ack"  ETV
+vector 72  PcapRecorderTest.server.tcp  "advertised window"  ETV
+vector 70  PcapRecorderTest.server.tcp  "send window"  ETV
+vector 85  PcapRecorderTest.server.tcp  tcpRcvQueueBytes  ETV
+vector 71  PcapRecorderTest.server.tcp  "receive window"  ETV
+vector 74  PcapRecorderTest.server.tcp  "sent ack"  ETV
+vector 59  PcapRecorderTest.server.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 61  PcapRecorderTest.server.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 68  PcapRecorderTest.server.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 64  PcapRecorderTest.server.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 27  PcapRecorderTest.client1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 48  PcapRecorderTest.server.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 49  PcapRecorderTest.server.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 57  PcapRecorderTest.server.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 43  PcapRecorderTest.server.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 56  PcapRecorderTest.server.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 52  PcapRecorderTest.server.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 14  PcapRecorderTest.client0.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 18  PcapRecorderTest.client0.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 99  PcapRecorderTest.client0.tcp  "rcvd seq"  ETV
+vector 100  PcapRecorderTest.client0.tcp  "rcvd ack"  ETV
+vector 94  PcapRecorderTest.client0.tcp  "send window"  ETV
+vector 47  PcapRecorderTest.server.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 28  PcapRecorderTest.client1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 29  PcapRecorderTest.client1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 37  PcapRecorderTest.client1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 77  PcapRecorderTest.server.tcp  "unacked bytes"  ETV
+vector 147  PcapRecorderTest.server.tcp  "rcvd seq"  ETV
+vector 148  PcapRecorderTest.server.tcp  "rcvd ack"  ETV
+vector 144  PcapRecorderTest.server.tcp  "advertised window"  ETV
+vector 142  PcapRecorderTest.server.tcp  "send window"  ETV
+vector 157  PcapRecorderTest.server.tcp  tcpRcvQueueBytes  ETV
+vector 143  PcapRecorderTest.server.tcp  "receive window"  ETV
+vector 146  PcapRecorderTest.server.tcp  "sent ack"  ETV
+vector 123  PcapRecorderTest.client1.tcp  "rcvd seq"  ETV
+vector 124  PcapRecorderTest.client1.tcp  "rcvd ack"  ETV
+vector 118  PcapRecorderTest.client1.tcp  "send window"  ETV
+vector 149  PcapRecorderTest.server.tcp  "unacked bytes"  ETV
+vector 1  PcapRecorderTest.client0.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 20  PcapRecorderTest.client1.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 97  PcapRecorderTest.client0.tcp  "sent seq"  ETV
+vector 101  PcapRecorderTest.client0.tcp  "unacked bytes"  ETV
+vector 121  PcapRecorderTest.client1.tcp  "sent seq"  ETV
+vector 125  PcapRecorderTest.client1.tcp  "unacked bytes"  ETV
+vector 78  PcapRecorderTest.server.tcp  "rcvd dupAcks"  ETV
+vector 39  PcapRecorderTest.server.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 41  PcapRecorderTest.server.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 40  PcapRecorderTest.server.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 73  PcapRecorderTest.server.tcp  "sent seq"  ETV
+vector 150  PcapRecorderTest.server.tcp  "rcvd dupAcks"  ETV
+vector 145  PcapRecorderTest.server.tcp  "sent seq"  ETV
+vector 113  PcapRecorderTest.client0.tcp  "measured RTT"  ETV
+vector 114  PcapRecorderTest.client0.tcp  "smoothed RTT"  ETV
+vector 115  PcapRecorderTest.client0.tcp  RTTVAR  ETV
+vector 116  PcapRecorderTest.client0.tcp  RTO  ETV
+vector 111  PcapRecorderTest.client0.tcp  cwnd  ETV
+vector 102  PcapRecorderTest.client0.tcp  "rcvd dupAcks"  ETV
+vector 137  PcapRecorderTest.client1.tcp  "measured RTT"  ETV
+vector 138  PcapRecorderTest.client1.tcp  "smoothed RTT"  ETV
+vector 139  PcapRecorderTest.client1.tcp  RTTVAR  ETV
+vector 140  PcapRecorderTest.client1.tcp  RTO  ETV
+vector 135  PcapRecorderTest.client1.tcp  cwnd  ETV
+vector 126  PcapRecorderTest.client1.tcp  "rcvd dupAcks"  ETV
+vector 0  PcapRecorderTest.client0.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 2  PcapRecorderTest.client0.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 19  PcapRecorderTest.client1.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 21  PcapRecorderTest.client1.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 89  PcapRecorderTest.server.tcp  "measured RTT"  ETV
+vector 90  PcapRecorderTest.server.tcp  "smoothed RTT"  ETV
+vector 91  PcapRecorderTest.server.tcp  RTTVAR  ETV
+vector 92  PcapRecorderTest.server.tcp  RTO  ETV
+vector 87  PcapRecorderTest.server.tcp  cwnd  ETV
+vector 161  PcapRecorderTest.server.tcp  "measured RTT"  ETV
+vector 162  PcapRecorderTest.server.tcp  "smoothed RTT"  ETV
+vector 163  PcapRecorderTest.server.tcp  RTTVAR  ETV
+vector 164  PcapRecorderTest.server.tcp  RTO  ETV
+vector 159  PcapRecorderTest.server.tcp  cwnd  ETV
+0	11049 63 148 315 0.4009706 0.4024076 3 536 536 1608 861888
+1	11112 17 85 85 0.4 0.4 1 400000 400000 400000 160000000000
+2	11129 57 148 315 0.4009706 0.4024076 3 0 0 0 0
+8	11186 398 17 448 0.2 0.403378 20 40 576 8844 4984976
+10	11584 313 17 449 0.2 0.4034154 13 0 0.001399 0.0080026 8.18886396e-006
+11	11897 506 0 449 0 0.4034154 26 0 8 103 581
+12	12403 488 0 450 0 0.4034154 26 0 1 13 13
+13	12891 264 19 450 0.2 0.4034154 13 47 583 4903 2730549
+14	13155 232 39 442 0.2000818 0.403378 11 47 583 2129 1037731
+17	13387 264 19 450 0.2 0.4034154 13 40 576 4812 2662544
+18	13651 232 39 442 0.2000818 0.403378 11 40 576 2052 1008464
+19	13883 66 183 340 0.4010306 0.4025524 3 536 536 1608 861888
+20	13949 18 86 86 0.4 0.4 1 400000 400000 400000 160000000000
+21	13967 60 183 340 0.4010306 0.4025524 3 0 0 0 0
+22	14027 13 16 16 0.2 0.2 1 1 1 1 1
+27	14040 274 29 493 0.2000576 0.4036786 13 64 594 4542 2494428
+28	14314 250 47 470 0.2001154 0.403602 12 64 594 2358 1095372
+29	14564 250 47 470 0.2001154 0.403602 12 64 594 2358 1095372
+32	14814 434 21 479 0.2 0.403602 21 64 594 9294 5317116
+36	15248 434 20 477 0.2 0.403602 21 28 576 8872 4985760
+37	15682 250 48 471 0.2001154 0.403602 12 28 576 2080 1009248
+39	15932 307 99 463 0.4004665 0.4035443 14 536 536 7504 4022144
+40	16239 321 99 463 0.4004665 0.4035443 14 1072 1072 15008 16088576
+41	16560 279 99 463 0.4004665 0.4035443 14 0 0 0 0
+43	16839 19 33 33 0.2000577 0.2000577 1 1 1 1 1
+47	16858 253 46 469 0.2001153 0.4036019 12 64 594 2358 1095372
+48	17111 277 30 494 0.2000577 0.4036787 13 64 594 4542 2494428
+49	17388 277 30 494 0.2000577 0.4036787 13 64 594 4542 2494428
+52	17665 297 36 491 0.2000577 0.4036115 14 64 594 3546 1801044
+56	17962 297 35 489 0.2000577 0.4036115 14 28 576 3232 1672800
+57	18259 277 31 495 0.2000577 0.4036787 13 28 576 4264 2331552
+59	18536 321 27 457 0.2000409 0.4034155 15 40 576 4356 2335568
+61	18857 271 27 439 0.2000409 0.4033779 12 0 0.0004664 0.001008 4.3788544e-007
+62	19128 230 0 457 0 0.4034155 12 0 3 10 18
+63	19358 468 0 441 0 0.4033779 24 0 1 12 12
+64	19826 255 28 441 0.2000409 0.4033779 12 47 583 2712 1377620
+65	20081 256 23 451 0.2000409 0.4034155 12 47 583 4320 2390660
+68	20337 255 28 441 0.2000409 0.4033779 12 40 576 2628 1340240
+69	20592 256 23 451 0.2000409 0.4034155 12 40 576 4236 2330768
+70	20848 113 25 453 0.2000409 0.4034155 5 7504 7504 37520 281550080
+71	20961 343 25 453 0.2000409 0.4034155 15 7504 7504 112560 844650240
+72	21304 381 25 453 0.2000409 0.4034155 16 57505 61257 953848 56894848160
+73	21685 168 101 453 0.4004665 0.4034155 7 50011 53227 361333 18659692415
+74	21853 358 25 453 0.2000409 0.4034155 15 50001 53753 783783 40980357631
+75	22211 285 25 453 0.2000409 0.4034155 12 50000 53753 620379 32094825355
+76	22496 281 25 453 0.2000409 0.4034155 12 0 51619 555481 28053390579
+77	22777 175 56 453 0.2001195 0.4034155 8 0 2144 6968 10055360
+78	22952 199 98 453 0.4004665 0.4034155 10 0 0 0 0
+85	23151 437 25 453 0.2000409 0.4034155 22 0 0 0 0
+87	23588 69 215 453 0.4014747 0.4034155 3 1072 2144 4824 8331584
+89	23657 56 215 436 0.4014747 0.4033779 2 0.0010082 0.0019032 0.0029114 4.63863748e-006
+90	23713 63 215 436 0.4014747 0.4033779 2 0.000126025 0.000348171875 0.000474196875 1.3710595516602e-007
+91	23776 62 215 436 0.4014747 0.4033779 2 0.57455116875 0.656376025 1.23092719375 0.76093853170679
+92	23838 63 215 436 0.4014747 0.4033779 2 2.298552846875 2.625630125 4.924182971875 12.177278743185
+94	23901 182 41 444 0.2000818 0.403378 8 7504 7504 60032 450480128
+95	24083 443 13 444 0.2 0.403378 20 7504 7504 150080 1126200320
+96	24526 485 13 444 0.2 0.403378 21 7504 59123 1176028 68337977876
+97	25011 351 87 444 0.4 0.403378 15 50001 57505 806295 43421218015
+98	25362 459 13 444 0.2 0.403378 20 0 51619 968433 49369559867
+99	25821 262 41 444 0.2000818 0.403378 11 50010 51619 559232 28435755502
+100	26083 273 41 444 0.2000818 0.403378 11 50001 53753 568771 29422817595
+101	26356 346 87 444 0.4 0.403378 15 0 4288 30552 84752320
+102	26702 209 124 444 0.4005042 0.403378 10 0 0 0 0
+109	26911 466 13 444 0.2 0.403378 23 0 0 0 0
+111	27377 167 124 444 0.4005042 0.403378 7 1072 4288 18760 58321088
+113	27544 87 124 322 0.4005042 0.4024452 3 0.0005042 0.0014368 0.0024452 2.57282952e-006
+114	27631 98 124 322 0.4005042 0.4024452 3 6.3025e-005 0.00028300039 0.000464197265 9.8025963406168e-008
+115	27729 98 124 322 0.4005042 0.4024452 3 0.502702741797 0.656313025 1.733344810547 1.0133106838897
+116	27827 99 124 322 0.4005042 0.4024452 3 2.011093967578 2.625315125 6.933843439453 16.214983030183
+118	27926 188 72 473 0.2002308 0.403602 8 7504 7504 60032 450480128
+119	28114 459 14 473 0.2 0.403602 20 7504 7504 150080 1126200320
+120	28573 502 14 473 0.2 0.403602 21 7504 59156 1176688 68415122240
+121	29075 362 88 473 0.4 0.403602 15 50001 57505 806295 43421218015
+122	29437 475 14 473 0.2 0.403602 20 0 51652 969060 49433497136
+123	29912 271 72 473 0.2002308 0.403602 11 50043 51652 559595 28472676793
+124	30183 271 72 473 0.2002308 0.403602 11 50001 53753 568771 29422817595
+125	30454 342 88 473 0.4 0.403602 15 0 4288 30552 84752320
+126	30796 207 134 473 0.4005394 0.403602 10 0 0 0 0
+133	31003 462 14 473 0.2 0.403602 23 0 0 0 0
+135	31465 165 134 473 0.4005394 0.403602 7 1072 4288 18760 58321088
+137	31630 87 134 360 0.4005394 0.4026196 3 0.0005394 0.0015218 0.0026196 2.91863816e-006
+138	31717 99 134 360 0.4005394 0.4026196 3 6.7425e-005 0.000302922265 0.00049914414 1.128966642675e-007
+139	31816 98 134 360 0.4005394 0.4026196 3 0.502720854297 0.656317425 1.733377398047 1.0133462430303
+140	31914 99 134 360 0.4005394 0.4026196 3 2.011186339453 2.625337125 6.934008736328 16.215704086388
+142	32013 94 63 485 0.2001731 0.4036115 4 7504 7504 30016 225240064
+143	32107 311 63 485 0.2001731 0.4036115 13 7504 7504 97552 732030208
+144	32418 348 63 485 0.2001731 0.4036115 14 57505 61257 831334 49390008062
+145	32766 125 113 485 0.4004817 0.4036115 5 50044 52188 255580 13067100240
+146	32891 324 63 485 0.2001731 0.4036115 13 50001 53753 676277 35201587613
+147	33215 273 63 485 0.2001731 0.4036115 11 50000 53753 566626 29205440346
+148	33488 269 63 485 0.2001731 0.4036115 11 0 51116 504192 25422135200
+149	33757 135 82 485 0.2002885 0.4036115 6 0 1608 3752 4309440
+150	33892 189 110 485 0.4004817 0.4036115 9 0 0 0 0
+157	34081 419 63 485 0.2001731 0.4036115 20 0 0 0 0
+159	34500 48 255 485 0.4015795 0.4036115 2 1072 1608 2680 3734848
+161	34548 57 255 485 0.4015795 0.4036115 2 0.0010978 0.002032 0.0031298 5.33418884e-006
+162	34605 65 255 485 0.4015795 0.4036115 2 0.000137225 0.000374071875 0.000511296875 1.5876046829102e-007
+163	34670 64 255 485 0.4015795 0.4036115 2 0.57457566875 0.656387225 1.23096289375 0.76098138826271
+164	34734 65 255 485 0.4015795 0.4036115 2 2.298676746875 2.625686125 4.924362871875 12.178142413641

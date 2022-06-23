@@ -1,0 +1,4 @@
+<buildspec version="4.0">
+<dir makemake-options="--deep -luuid --meta:recurse --meta:auto-include-path --meta:export-library --meta:use-exported-libs --meta:feature-cflags --meta:feature-ldflags -- C:/Windows/System32/ole32.dll C:/Windows/System32/oleaut32.dll" path="src" type="makemake"/>
+<dir path="." type="custom"/>
+</buildspec>

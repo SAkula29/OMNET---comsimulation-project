@@ -1,0 +1,8 @@
+04:29:49 **** Build of configuration gcc-debug for project inet ****
+make MODE=debug CONFIGNAME=gcc-debug -j4 all 
+cd src && make
+make[1]: Entering directory `/c/Users/getto/Downloads/sgsimv2/sgsimv2/workspace/inet/src'
+make[1]: Leaving directory `/c/Users/getto/Downloads/sgsimv2/sgsimv2/workspace/inet/src'
+
+04:30:39 Build Finished (took 50s.194ms)
+

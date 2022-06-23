@@ -1,0 +1,23 @@
+The program is tested under windows environment (Windows 7)
+-OpenDSS: Install OpenDSS. Make sure the the OpenDSSEngine.DLL is registered.
+Usually it is done automatically, but you can  do that manually as follows:
+
+a-run cmd as administrator
+b-change to the folder with the OpenDSSEngine.DLL
+c-run the following command  Regsvr32 OpenDSSEngine.DLL
+
+
+-OMNeT++: Install OMNeT++ (tested with version 4.4)
+-INET Framework: Install INET Framework (tested with version 2.3)
+
+make sure that SGsimLib.dll is stored in the simulation folder and give the whole path in omnetpp.ini, for example:
+
+"c:\\users\\workspace\\SGsim\\simulations\\example\\SGsimLib.dll"
+
+Store the DSS file  which describes the circuit (e.g. mycircuit.dss) in the simulation folder and give the whole path in omnetpp.ini, for example:
+
+"c:\\users\\workspace\\SGsim\\simulations\\example\\10Loads1.dss"
+
+make sure that you have  Visual Studio or at least have  the following DLL files in the simulation folder (e.g. "f:\\workspace2016\\SGsim\\simulations\\example\\")
+DLL files: msvcp120d.dll, msvcr100d.dll, msvcr120d.dll
+you can download Visual Studio Express for free!

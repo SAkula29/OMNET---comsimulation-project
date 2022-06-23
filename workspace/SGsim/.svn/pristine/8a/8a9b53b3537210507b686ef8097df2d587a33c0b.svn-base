@@ -1,0 +1,78 @@
+//
+// Copyright (C) 2014-2016 Abdalkarim Awad <abdalkarim.awad@cs.fau.de>
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// Please cite our papers:
+//Abdalkarim Awad, Peter Bazan and Reinhard German, "SGsim: a Simulation Framework for Smart Grid Applications," Proceedings of the IEEE International Energy Conference, Dubrovnik, Croatia, pp. 730-736, May 2014
+
+
+package SGsim.nodes;
+import SGsim.apps.DERApp;
+import inet.nodes.inet.NodeBase;
+import inet.transport.ITCP;
+import inet.transport.IUDP;
+
+
+//
+// IPv4 host with SCTP, TCP, UDP layers and applications.
+// IP forwarding is disabled by default (see IPForward).
+// - Can be connected via ethernet interface to other nodes using
+//   the ethg gate. By default full-duplex connections are supported
+//   only (twisted pair). Set **.eth[*].typename="EthernetInterface" for
+//   a full/half-duplex CSMA/CD implementation (coaxial cable)
+// - By default contains no wireless cards, however it can be configured
+//   by the numRadios parameter. Wirless card type is configured by the
+//   **.wlan[*].typename parameter. see:  inet.linklayer.ieee80211 or other
+//   modules implementing ~IWirelessNic
+// - Also external interfaces can be configured for HW in the loop simulation
+//   using the numExtInterfaces parameter and setting the type using
+//   **.ext[*].typename in the INI file. see: ~ExtInterface and ~IExternalNic
+// - If wireless card is present, node mobility can be set using **.mobilityType
+//   see: inet.mobility and ~IMobility
+//
+module SmartDER extends NodeBase
+{
+    parameters:
+        @display("i=device/pc2");
+        string udpType = default(firstAvailable("UDP","UDP_None"));
+        string tcpType = default(firstAvailable("TCP", "TCP_lwIP", "TCP_NSC", "TCP_None"));  // tcp implementation (e.g. ~TCP, ~TCP_lwIP, ~TCP_NSC) or ~TCPSpoof
+
+    submodules:
+        DERapp: DERApp {
+            parameters:
+                @display("p=147,4,row,60");
+        }
+        udp: <udpType> like IUDP {
+            parameters:
+                @display("p=329,141");
+        }
+
+        tcp: <tcpType> like ITCP {
+            parameters:
+                @display("p=147,141");
+        }
+        
+    connections allowunconnected:
+        DERapp.udpOut --> udp.appIn++;
+        DERapp.udpIn <-- udp.appOut++;
+
+        DERapp.tcpOut --> tcp.appIn++;
+        DERapp.tcpIn <-- tcp.appOut++;
+
+        tcp.ipOut --> networkLayer.transportIn++;
+        tcp.ipIn <-- networkLayer.transportOut++;
+
+        udp.ipOut --> networkLayer.transportIn++;
+        udp.ipIn <-- networkLayer.transportOut++;
+}

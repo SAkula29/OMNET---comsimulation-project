@@ -1,0 +1,143 @@
+//
+// Copyright (C) 2014 Abdalkarim Awad <abdalkarim.awad@cs.fau.de>
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//
+package SGsim.simulations.simplenetwork1;
+import SGsim.apps.Mainsolver;
+import SGsim.apps.SGSimInterface;
+import SGsim.nodes.PDCmodel;
+import SGsim.nodes.SmartBAT;
+import SGsim.nodes.SmartController;
+import SGsim.nodes.SmartDER;
+import SGsim.nodes.SmartHost;
+import SGsim.nodes.SmartHouse;
+import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
+import inet.nodes.inet.Router;
+import inet.nodes.internetcloud.InternetCloud;
+import ned.DatarateChannel;
+
+
+network Smartgridnet
+{
+    @display("bgb=808,522;bgl=6");
+    types:
+        channel connection1 extends DatarateChannel
+        {
+            delay = normal(0.00015s, 0.00005s);
+            datarate = 10Mbps;
+        }
+        channel connection2 extends DatarateChannel
+        {
+            ber = 0.0;
+            delay = normal(0.000001s, 0.0000001s);
+            datarate = 512Mbps;
+        }
+
+
+    submodules:
+        SGSimInterface: SGSimInterface {
+            parameters:
+                @display("i=block/star;p=594,61");
+        }
+
+        solver: Mainsolver {
+            parameters:
+                // assignDisjunctSubnetAddresses = false;
+                @display("p=221,31");
+        }
+        configurator: IPv4NetworkConfigurator {
+            parameters:
+                // assignDisjunctSubnetAddresses = false;
+                @display("p=73,38");
+        }
+
+        PDC: PDCmodel {
+            parameters:
+                @display("p=59,130;i=block/app2_l;is=s");
+            gates:
+                ethg[1];
+        }
+
+        PMU1: SmartHost {
+            @display("p=325,71;i=misc/square;is=s");
+        }
+        CVRController: SmartController {
+            @display("p=90,231;i=misc/controller");
+        }
+        LD1: SmartHouse {
+            @display("p=295,456;i=misc/house;is=l");
+        }
+
+        PV1: SmartDER {
+            @display("p=299,387;i=misc/Solar");
+        }
+        internet: InternetCloud {
+            @display("p=299,156;is=vl");
+        }
+        BAT1: SmartBAT {
+            @display("p=196,440;i=misc/bat_s");
+        }
+
+        PV2: SmartDER {
+            @display("p=354,387;i=misc/Solar");
+        }
+        PV3: SmartDER {
+            @display("p=402,387;i=misc/Solar");
+        }
+        PV4: SmartDER {
+            @display("p=452,387;i=misc/Solar");
+        }
+        PV5: SmartDER {
+            @display("p=490,387;i=misc/Solar");
+        }
+        LD2: SmartHouse {
+            @display("p=354,456;i=misc/house;is=l");
+        }
+
+        LD3: SmartHouse {
+            @display("p=425,456;i=misc/house;is=l");
+        }
+
+        LD4: SmartHouse {
+            @display("p=490,448;i=misc/house;is=l");
+        }
+
+        LD5: SmartHouse {
+            @display("p=545,440;i=misc/house;is=l");
+        }
+        router3: Router {
+            @display("p=152,143");
+        }
+
+    connections:
+
+        internet.pppg++ <--> connection2 <--> CVRController.pppg++;
+
+        internet.pppg++ <--> connection1 <--> PMU1.pppg++;
+
+        PDC.ethg[0] <--> connection1 <--> router3.ethg++;
+        internet.pppg++ <--> connection2 <--> router3.pppg++;
+        LD1.pppg++ <--> connection1 <--> internet.pppg++;
+        LD2.pppg++ <--> connection1 <--> internet.pppg++;
+        LD3.pppg++ <--> connection1 <--> internet.pppg++;
+        LD4.pppg++ <--> connection1 <--> internet.pppg++;
+        LD5.pppg++ <--> connection1 <--> internet.pppg++;
+        BAT1.pppg++ <--> connection1 <--> internet.pppg++;
+        PV1.pppg++ <--> connection1 <--> internet.pppg++;
+        PV2.pppg++ <--> connection1 <--> internet.pppg++;
+        PV3.pppg++ <--> connection1 <--> internet.pppg++;
+        PV4.pppg++ <--> connection1 <--> internet.pppg++;
+        PV5.pppg++ <--> connection1 <--> internet.pppg++;
+}
